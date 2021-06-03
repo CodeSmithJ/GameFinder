@@ -17,9 +17,6 @@ namespace BFGgameFinder.Models.GameModels
 
         public string Rating { get; set; }
 
-        [Display(Name = "Created")]
-        public DateTimeOffset ReleaseDate { get; set; }
-
         public int? GameSystemId { get; set; }
         public virtual GameSystem GameSystem { get; set; }
 

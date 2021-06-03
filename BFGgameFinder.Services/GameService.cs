@@ -16,25 +16,27 @@ namespace BFGgameFinder.Services
         {
             _userId = userId;
         }
-        public bool CreateNote(GameCreate model)
+        public bool CreateGame(GameCreate model)
         {
             var entity =
                 new Game()
                 {
                     GamerTag = _userId,
+                    GameId = model.GameId,
                     GameName = model.GameName,
-                    GameSystem = model.GameSystem,
-                    ReleaseDate = DateTimeOffset.Now,
+                    Rating = model.Rating,
+                    Genre = new Genre() { GenreType = model.Genre.GenreType},
+                    GameSystem = new GameSystem() { GameSystemType = model.GameSystem.GameSystemType},
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Games.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() >= 1;
             }
         }
 
-        public IEnumerable<GameItemList> GetGames()
+        public IEnumerable<GameDetails> GetGames()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -44,73 +46,17 @@ namespace BFGgameFinder.Services
                     .Where(e => e.GamerTag == _userId)
                     .Select(
                         e =>
-                        new GameItemList
+                        new GameDetails
                         {
                             GameId = e.GameId,
                             GameName = e.GameName,
-                            ReleaseDate = e.ReleaseDate,
-                            CategoryId = e.CategoryId,
-                            CategoryName = e.Category.Name
+                            Rating = e.Rating,
+                            Genre = new Genre() { GenreType = e.Genre.GenreType },
+                            //GameSystems = e.GameSystems.GameSystemType
                         }
                         );
                 return query.ToArray();
             }
         }
-
-        public GameDetails GetGameById(int id)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                    .Games
-                    .Single(e => e.GameId == id && e.GamerTag == _userId);
-                return
-                    new GameDetails
-                    {
-                        GameId = entity.GameId,
-                        GameName = entity.GameName,
-                        Content = entity.Content,
-                        CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc,
-                        CategoryId = entity.CategoryId,
-                        Category = new CategoryListItem() { CategoryId = entity.Category.CategoryId, Name = entity.Category.Name }
-                    };
-            }
-        }
-
-
-        public bool UpdateGame(GameEdit model)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                    .Games
-                    .Single(e => e.GameId == model.GameId && e.GamerTag == _userId);
-
-                entity.GameName = model.GameName;
-                entity.Content = model.Content;
-                entity.ModifiedUtc = DateTimeOffset.Now;
-                entity.CategoryId = model.CategoryId;
-                return ctx.SaveChanges() == 1;
-            }
-        }
-
-        public bool DeleteNote(int noteId)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                    .Games
-                    .Single(e => e.GameId == noteId && e.GamerTag == _userId);
-
-                ctx.Games.Remove(entity);
-
-                return ctx.SaveChanges() == 1;
-            }
-        }
     }
-}
 }

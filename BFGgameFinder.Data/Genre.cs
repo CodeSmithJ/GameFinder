@@ -11,7 +11,6 @@ namespace BFGgameFinder.Data
     {
         [Key]
         public int GenreId { get; set; }
-
         [Required]
         public string GenreType { get; set; }
     }

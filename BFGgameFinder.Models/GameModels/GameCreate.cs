@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFGgameFinder.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,13 +10,17 @@ namespace BFGgameFinder.Models.GameModels
 {
     public class GameCreate
     {
-        [Required]
-        public int GameId { get; set; }
+        public int GameId { get;}
+
         [Required]
         public string GameName { get; set; }
+
         [Required]
-        public string GameSystem { get; set; }
+        public string Rating { get; set; }
+
+        public virtual Genre Genre { get; set; }
+
         [Required]
-        public DateTimeOffset ReleaseDate { get; set; }
+        public virtual GameSystem GameSystem { get; set; }
     }
 }

@@ -19,10 +19,7 @@ namespace BFGgameFinder.Data
         [Required]
         public string GameName { get; set; }
 
-        [Required]
         public string Rating { get; set; }
-
-        public DateTimeOffset ReleaseDate { get; set; }
 
         [ForeignKey(nameof(GameSystem))]
         public int? GameSystemId { get; set; }
