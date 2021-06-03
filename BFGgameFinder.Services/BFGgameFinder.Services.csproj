@@ -63,5 +63,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BFGgameFinder.Data\BFGgameFinder.Data.csproj">
+      <Project>{38214828-87AC-479D-B517-98C00B348D71}</Project>
+      <Name>BFGgameFinder.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFGgameFinder.Models\BFGgameFinder.Models.csproj">
+      <Project>{996EEF41-2728-4065-A0FD-43E3F790A5B4}</Project>
+      <Name>BFGgameFinder.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
