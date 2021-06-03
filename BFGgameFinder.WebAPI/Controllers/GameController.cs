@@ -15,6 +15,10 @@ namespace BFGgameFinder.WebAPI.Controllers
     [Authorize]
     public class GameController : ApiController
     {
+
+        // Build a feature to show community posts related to game being viewed, Return 200 ok if community post are related to game
+        // error code 400  saying "No community post related to the game"
+
         // would add a feature to filter game out based on the users gerne input, should return users with title of games based on the genre. 
         // if no games for genre will return error 400 saying "no game by that genre"
 
@@ -66,5 +70,6 @@ namespace BFGgameFinder.WebAPI.Controllers
             var gameService = new GameService(userId);
             return gameService;
         }
+
     }
 }
