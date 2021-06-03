@@ -17,7 +17,11 @@ namespace BFGgameFinder.WebAPI.Controllers
     {
 
 
+        // Build a feature that allows user to search by name
+
+
         // Feature will be added here for if a user exceeds a 50 character limit. If they do there will be a "Character limit exceeded error" displayed
+
 
         public IHttpActionResult Post(GameCreate game)
         {
