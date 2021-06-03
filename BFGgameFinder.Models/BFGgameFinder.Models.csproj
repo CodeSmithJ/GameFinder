@@ -54,17 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="GameModels\GameCreate.cs" />
+    <Compile Include="GameModels\GameDetails.cs" />
+    <Compile Include="GameModels\GameEdit.cs" />
+    <Compile Include="GameModels\GameItemList.cs" />
+    <Compile Include="GameSystemModels\GameSystemCreate.cs" />
+    <Compile Include="GameSystemModels\GameSystemDetails.cs" />
+    <Compile Include="GameSystemModels\GameSystemEdit.cs" />
+    <Compile Include="GameSystemModels\GameSystemItemList.cs" />
+    <Compile Include="GenreModels\GenreCreate.cs" />
+    <Compile Include="GenreModels\GenreDetails.cs" />
+    <Compile Include="GenreModels\GenreEdit.cs" />
+    <Compile Include="GenreModels\GenreItemList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GameModels\" />
-    <Folder Include="GameSystemModels\" />
-    <Folder Include="GenreModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
