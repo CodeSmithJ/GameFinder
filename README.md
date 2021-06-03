@@ -1,5 +1,5 @@
 # BFG Game Finder
-<hr>
+
 ## User Stories
 
 Game finder is an web application that allows users to create a profile and browse a video game library.  Users can search games adding them to a personal game list.  The user will be able to search by title, release, genre, and rating.
