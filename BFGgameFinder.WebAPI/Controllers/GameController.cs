@@ -9,5 +9,6 @@ namespace BFGgameFinder.WebAPI.Controllers
 {
     public class GameController : ApiController
     {
+        //Build a feature that allows the user to select star ratings
     }
 }
