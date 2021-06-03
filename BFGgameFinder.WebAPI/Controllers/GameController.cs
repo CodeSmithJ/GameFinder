@@ -16,6 +16,10 @@ namespace BFGgameFinder.WebAPI.Controllers
     public class GameController : ApiController
     {
 
+        // Build feature for admin to remove games, return 200 Ok 
+        // if error return 400 "Game could not be removed"
+
+
         // Build a feature to show community posts related to game being viewed, Return 200 ok if community post are related to game
         // error code 400  saying "No community post related to the game"
 
@@ -70,6 +74,7 @@ namespace BFGgameFinder.WebAPI.Controllers
             var gameService = new GameService(userId);
             return gameService;
         }
+
 
     }
 }
