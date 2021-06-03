@@ -9,5 +9,6 @@ namespace BFGgameFinder.WebAPI.Controllers
 {
     public class GameController : ApiController
     {
+        //Already done // Done during the creation of the project
     }
 }
