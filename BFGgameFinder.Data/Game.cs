@@ -10,6 +10,7 @@ namespace BFGgameFinder.Data
 {
     public class Game
     {
+
         [Key]
         public int GameId { get; set; }
 
@@ -19,10 +20,11 @@ namespace BFGgameFinder.Data
         [Required]
         public string GameName { get; set; }
 
-        [Required]
         public string Rating { get; set; }
 
-        public DateTimeOffset ReleaseDate { get; set; }
+        [ForeignKey(nameof(GameSystem))]
+        public int? GameSystemId { get; set; }
+        public virtual GameSystem GameSystem { get; set; }
 
         [ForeignKey(nameof(Genre))]
         public int? GenreId { get; set; }
