@@ -15,6 +15,9 @@ namespace BFGgameFinder.WebAPI.Controllers
     [Authorize]
     public class GameController : ApiController
     {
+        // would add a feature to filter game out based on the users gerne input, should return users with title of games based on the genre. 
+        // if no games for genre will return error 400 saying "no game by that genre"
+
 
         // Build a feature that allows users to view games based off maturity rating
 
@@ -63,7 +66,5 @@ namespace BFGgameFinder.WebAPI.Controllers
             var gameService = new GameService(userId);
             return gameService;
         }
-
-
     }
 }
