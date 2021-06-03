@@ -24,6 +24,10 @@ namespace BFGgameFinder.Data
 
         public DateTimeOffset ReleaseDate { get; set; }
 
+        [ForeignKey(nameof(GameSystem))]
+        public int? GameSystemId { get; set; }
+        public virtual GameSystem GameSystem { get; set; }
+
         [ForeignKey(nameof(Genre))]
         public int? GenreId { get; set; }
         public virtual Genre Genre { get; set; }

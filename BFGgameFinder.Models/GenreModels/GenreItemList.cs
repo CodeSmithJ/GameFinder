@@ -8,5 +8,8 @@ namespace BFGgameFinder.Models.GenreModels
 {
     public class GenreItemList
     {
+        public int GenreId { get; set; }
+        public string GenreType { get; set; }
+
     }
 }
