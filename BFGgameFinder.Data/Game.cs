@@ -10,6 +10,7 @@ namespace BFGgameFinder.Data
 {
     public class Game
     {
+
         [Key]
         public int GameId { get; set; }
 
