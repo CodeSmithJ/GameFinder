@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BFGgameFinder.Services
 {
-    class GenreService
+    public class GenreService
     {
     }
 }

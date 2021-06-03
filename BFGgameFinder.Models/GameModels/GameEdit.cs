@@ -8,5 +8,7 @@ namespace BFGgameFinder.Models.GameModels
 {
     public class GameEdit
     {
+        public int GameId { get; set; }
+        public string GameName { get; set; }
     }
 }
