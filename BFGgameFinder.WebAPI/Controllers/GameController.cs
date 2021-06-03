@@ -16,6 +16,9 @@ namespace BFGgameFinder.WebAPI.Controllers
     public class GameController : ApiController
     {
 
+        //Build a feature that allows the user to select star ratings
+
+
         //This feature adds a method for sending back games that have been downloaded the most.
         //If this fails it will send back a game not found it will send back a "Game not found" error message.
 
@@ -57,5 +60,6 @@ namespace BFGgameFinder.WebAPI.Controllers
             var gameService = new GameService(userId);
             return gameService;
         }
+
     }
 }
