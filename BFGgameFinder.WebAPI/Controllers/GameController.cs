@@ -16,6 +16,9 @@ namespace BFGgameFinder.WebAPI.Controllers
     public class GameController : ApiController
     {
 
+        // Build a feature that allows users to view games based off maturity rating
+
+
         //Build a feature that allows the user to select star ratings
 
 
@@ -60,6 +63,7 @@ namespace BFGgameFinder.WebAPI.Controllers
             var gameService = new GameService(userId);
             return gameService;
         }
+
 
     }
 }
