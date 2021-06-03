@@ -16,4 +16,3 @@ namespace BFGgameFinder.Data
         public string GameSystemType { get; set; }
     }
 }
-}
